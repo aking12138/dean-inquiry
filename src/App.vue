@@ -1,30 +1,18 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="app">
+    <router-view />
   </div>
-  <router-view />
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<script>
+export default {
+  name: "App",
+  mounted() {
+    sessionStorage.setItem(
+      "token",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIwMDk5OTkiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiY29tcGFueSI6ImhpcCIsImV4cCI6MTYzODkyOTg0MSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImp0aSI6IjI1MzZhZDRjLTdjODgtNDFmNy05YTIwLTdiYjUyYmFmNTA2NCIsImNsaWVudF9pZCI6IkhpcE1hbmFnZXIifQ.unFIWIvK4FoBD6Dh1ik1HBnZk5_n-mWKV79xTpjCo1Q"
+    );
+    sessionStorage.setItem("name", "009999");
+  },
+};
+</script>
